@@ -1,21 +1,24 @@
-const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
+const { Client, GatewayIntentBits, ActivityType } = require("discord.js");
+const client = new Client({
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
+});
 
-const token = 'MTI5MzYyMTg0NDY5MTM5MDU4NA.GuKUIu.cITW-O48tnPlIIHQvPy48N1bCDrKaDzVbWM1Rs'; // Substitua pelo token do seu bot
-const channelId = '1293592905981628539'; // Substitua pelo ID do canal onde deseja enviar a mensagem
+const token =
+    "MTI5MzYyMTg0NDY5MTM5MDU4NA.Gxx3Sb.xejc6RJiTJ8Gkms4xL3_TMLNq9xvs5EFqQBTs8"; // Substitua pelo token do seu bot
+const channelId = "1291786896401240075"; // Substitua pelo ID do canal onde deseja enviar a mensagem
 
-client.once('ready', () => {
+client.once("ready", () => {
     console.log(`Logado como ${client.user.tag}!`);
 
     // Atualizar a presença do bot
     client.user.setPresence({
         activities: [
             {
-                name: 'Krazyz Community!', // Personalize sua mensagem
+                name: "Krazyz Community!", // Personalize sua mensagem
                 type: ActivityType.Watching, // Tipo de atividade
             },
         ],
-        status: 'online', // Status do bot (online, idle, dnd, etc.)
+        status: "online", // Status do bot (online, idle, dnd, etc.)
     });
 
     // Função para marcar o grupo com o ID de função e enviar a mensagem de aviso
@@ -29,7 +32,7 @@ Hora de acordar povo! <@&1291822526346952796>
             `;
             channel.send(mensagem); // Envia a mensagem personalizada
         } else {
-            console.log('Canal não encontrado.');
+            console.log("Canal não encontrado.");
         }
     }
 
